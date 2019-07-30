@@ -1,3 +1,3 @@
-let app = document.querySelector("#app");
+const app = document.querySelector('#app');
 
-app.innerHTML = "<h2>Welcome to to-do</h2>";
+app.innerHTML = '<h2>Welcome to to-do</h2>';
