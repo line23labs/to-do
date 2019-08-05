@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import * as mongoose from 'mongoose';
 
 const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
@@ -12,4 +12,4 @@ const TaskSchema = new Schema({
 
 const Task = mongoose.model('task', TaskSchema);
 
-module.exports = {Task};
+export {Task};

@@ -1,7 +1,9 @@
-require('dotenv').config();
-const express = require('express');
-const mongoose = require('mongoose');
-const {Task} = require('./src/model/tasks');
+import * as express from 'express';
+import * as mongoose from 'mongoose';
+import {Task} from './src/model/tasks';
+import * as dotenv from 'dotenv';
+
+dotenv.config();
 
 const databaseUrl = process.env.DATABASE_URL || 'mongodb://localhost:27017/todo';
 mongoose.connect(databaseUrl, {useNewUrlParser: true});
