@@ -1,6 +1,6 @@
 import * as express from 'express';
 import * as mongoose from 'mongoose';
-import {Task} from './src/model/tasks';
+import {Task} from '../model/tasks';
 import * as dotenv from 'dotenv';
 
 dotenv.config();
