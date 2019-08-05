@@ -19,7 +19,6 @@ app.use(webpackDevMiddleware(compiler, {
   publicPath: config.output.publicPath,
 }));
 
-app.get('/', (req, res) => res.send('Hello World!'));
 app.get('/api/tasks', (req, res) => {
   Task.find({}).exec((error, tasks) => {
     if (error) {
