@@ -1,6 +1,6 @@
 import * as express from 'express';
 import * as mongoose from 'mongoose';
-import {Task} from '../model/tasks';
+import {Task} from './model/tasks';
 import * as dotenv from 'dotenv';
 import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';

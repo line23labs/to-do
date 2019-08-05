@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "build": "rm -rf dist && webpack --mode development --config webpack.server.config.js && webpack --mode development",
-    "start": "node ./dist/server.js",
+    "start": "nodemon ./dist/server.js",
     "clean": "nwb clean-app",
     "test": "nwb test",
     "test:coverage": "nwb test --coverage",
