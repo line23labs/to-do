@@ -13,6 +13,7 @@ module.exports = {
   },
   target: 'web',
   devtool: 'source-map',
+  mode: 'development',
   module: {
     rules: [
       {
