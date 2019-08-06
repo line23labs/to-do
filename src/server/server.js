@@ -19,6 +19,25 @@ app.use(webpackDevMiddleware(compiler, {
   publicPath: config.output.publicPath,
 }));
 
+
+app.get('/', (req, res) => res.send('Hello World!'));
+app.get('/:id', (req, res) =>{
+  Task.find({}).exec((error, tasks)=> {
+    if (error) {
+      res.json({
+        error: error.message,
+      });
+    } else {
+      tasks.forEach(function(element) {
+        const id=JSON.stringify(element._id);
+        if ((id.replace(/"/g, ''))===(req.params.id)) {
+          res.json(tasks.filter((element) => JSON.stringify(element._id).replace(/"/g, '') === (req.params.id)));
+        }
+      });
+    }
+  });
+});
+
 app.get('/api/tasks', (req, res) => {
   Task.find({}).exec((error, tasks) => {
     if (error) {
