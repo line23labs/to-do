@@ -21,22 +21,6 @@ app.use(webpackDevMiddleware(compiler, {
 
 
 app.get('/', (req, res) => res.send('Hello World!'));
-app.get('/:id', (req, res) =>{
-  Task.find({}).exec((error, tasks)=> {
-    if (error) {
-      res.json({
-        error: error.message,
-      });
-    } else {
-      tasks.forEach(function(element) {
-        const id=JSON.stringify(element._id);
-        if ((id.replace(/"/g, ''))===(req.params.id)) {
-          res.json(tasks.filter((element) => JSON.stringify(element._id).replace(/"/g, '') === (req.params.id)));
-        }
-      });
-    }
-  });
-});
 
 app.get('/api/tasks', (req, res) => {
   Task.find({}).exec((error, tasks) => {
@@ -46,6 +30,21 @@ app.get('/api/tasks', (req, res) => {
       });
     } else {
       res.json(tasks);
+    }
+  });
+});
+app.get('/api/task/:id', (req, res) => {
+  Task.findById(req.params.id).exec((error, task)=>{
+    if (error) {
+      let response = error.message;
+      if (error.kind === 'ObjectId') {
+        response = 'Invalid Id';
+      }
+      res.json({
+        error: response,
+      });
+    } else {
+      res.json(task);
     }
   });
 });
