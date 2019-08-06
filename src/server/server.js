@@ -1,6 +1,6 @@
 import * as express from 'express';
 import * as mongoose from 'mongoose';
-import {Task} from './model/tasks';
+import {TaskManager} from './controllers/tasks';
 import * as dotenv from 'dotenv';
 import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
@@ -22,31 +22,7 @@ app.use(webpackDevMiddleware(compiler, {
 
 app.get('/', (req, res) => res.send('Hello World!'));
 
-app.get('/api/tasks', (req, res) => {
-  Task.find({}).exec((error, tasks) => {
-    if (error) {
-      res.json({
-        error: error.message,
-      });
-    } else {
-      res.json(tasks);
-    }
-  });
-});
-app.get('/api/task/:id', (req, res) => {
-  Task.findById(req.params.id).exec((error, task)=>{
-    if (error) {
-      let response = error.message;
-      if (error.kind === 'ObjectId') {
-        response = 'Invalid Id';
-      }
-      res.json({
-        error: response,
-      });
-    } else {
-      res.json(task);
-    }
-  });
-});
+app.get('/api/tasks', (req, res) => new TaskManager(req, res).find());
+app.get('/api/tasks/:id', (req, res) => new TaskManager(req, res).findById(req.params.id));
 
 app.listen(port, () => console.log(`Server listening on http://127.0.0.1:${port}`));
