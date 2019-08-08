@@ -23,6 +23,6 @@ app.use(webpackDevMiddleware(compiler, {
 app.get('/', (req, res) => res.send('Hello World!'));
 
 app.get('/api/tasks', (req, res) => new TaskManager(req, res).find());
-app.get('/api/tasks/:id', (req, res) => new TaskManager(req, res).findById(req.params.id));
+app.get('/api/task/:id', (req, res) => new TaskManager(req, res).findById(req.params.id));
 
 app.listen(port, () => console.log(`Server listening on http://127.0.0.1:${port}`));
