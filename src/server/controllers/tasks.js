@@ -1,4 +1,5 @@
 import {Task} from '../models/tasks';
+import {toUnicode} from 'punycode';
 
 /**
  * Manage Tasks for our Express API
@@ -91,19 +92,15 @@ export class TaskManager {
       }
     });
   }
-  /**
-         *
-         *
-         *
-         * @memberof TaskManager
-         */
+
   insertTask() {
     const newTask = new Task(this.req.body);
     newTask.save((error, tasks) => {
+      console.log('nice');
       if (error) {
         console.log('error');
-
         const response = error.message;
+
         this.res.json({
           error: response,
         });
