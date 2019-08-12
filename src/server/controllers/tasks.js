@@ -52,4 +52,20 @@ export class TaskManager {
       }
     });
   }
+
+  /**
+  *
+  *
+  * @param {*} [option={}]
+  * @memberof TaskManager
+  */
+  deleteTask(option={}) {
+    Task.findByIdAndRemove(option, (error, tasks) => {
+      if (!error) {
+        this.res.json(tasks);
+      } else {
+        this.res.json(error.message = 'Invalid task ID');
+      }
+    });
+  }
 }
