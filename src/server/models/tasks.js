@@ -1,5 +1,4 @@
 import * as mongoose from 'mongoose';
-import { toUnicode } from 'punycode';
 
 const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
@@ -24,11 +23,18 @@ const TaskSchema = new Schema({
     required: true,
     trim: true,
   },
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+    lowercase: true,
+    validate: (value) => {
+      return validator.isEmail(value);
+    },
+  },
 });
 
 const Task = mongoose.model('tasks', TaskSchema);
 
 
 export {Task};
-
-
