@@ -1,3 +1,10 @@
-const app = document.querySelector('#app');
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-app.innerHTML = '<h2>Welcome to to-do</h2>';
+class App extends React.Component {
+    render() {
+        return <div>Welcome to React</div>;
+    }
+}
+
+ReactDOM.render(<App/>, document.getElementById('app'));
