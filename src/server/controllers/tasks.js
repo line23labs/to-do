@@ -56,16 +56,17 @@ export class TaskManager {
   /**
   *
   *
-  * @param {*} [option={}]
+  * @param {*} [id={}]
   * @memberof TaskManager
   */
-  deleteTask(option={}) {
-    Task.findByIdAndRemove(option, (error, tasks) => {
+  deleteTask(id) {
+    Task.findByIdAndRemove(id, (error, tasks) => {
       if (!error) {
         this.res.json(tasks);
       } else {
-        this.res.json(error.message = 'Invalid task ID');
+        this.res.json({error: 'Invalid task ID'});
       }
     });
   }
 }
+
