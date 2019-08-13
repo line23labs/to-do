@@ -28,9 +28,6 @@ const TaskSchema = new Schema({
     required: true,
     unique: true,
     lowercase: true,
-    validate: (value) => {
-      return validator.isEmail(value);
-    },
   },
 });
 
