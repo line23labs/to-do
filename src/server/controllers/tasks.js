@@ -96,7 +96,7 @@ export class TaskManager {
   insertTask() {
     const newTask = new Task(this.req.body);
     newTask.save((error, tasks) => {
-      console.log('nice');
+      console.log('error');
       if (error) {
         console.log('error');
         const response = error.message;
@@ -105,7 +105,7 @@ export class TaskManager {
           error: response,
         });
       } else {
-        // this.res.redirect('http://localhost:3000/');
+        console.log('error');
         this.res.json(tasks);
       }
     });
