@@ -1,4 +1,4 @@
-import {Task} from './models/tasks';
+import {Task} from '../models/tasks';
 
 /**
  * Manage Tasks for our Express API
