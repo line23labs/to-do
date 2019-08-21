@@ -53,6 +53,12 @@ export class TaskManager {
       }
     });
   }
+  /**
+   * add or insert a task to the database
+   *
+   * @param {*} [option={}]
+   * @memberof TaskManager
+   */
 
 
   /**
@@ -95,19 +101,7 @@ export class TaskManager {
 
   insertTask() {
     const newTask = new Task(this.req.body);
-    newTask.save((error, tasks) => {
-      console.log('error');
-      if (error) {
-        console.log('error');
-        const response = error.message;
-
-        this.res.json({
-          error: response,
-        });
-      } else {
-        console.log('error');
-        this.res.json(tasks);
-      }
-    });
+    newTask.save;
+    this.res.json(tasks);
   }
 }
