@@ -81,10 +81,14 @@ export class TaskManager {
           error: error.message,
         });
       } else {
-        tasks.name = this.req.body.name || tasks.name;
-        tasks.body = this.req.body.body || tasks.body;
-        tasks.save();
-        this.res.json(tasks);
+        if (this.req.body.name && this.req.body.body) {
+          tasks.name = this.req.body.name || tasks.name;
+          tasks.body = this.req.body.body || tasks.body;
+          tasks.save();
+          this.res.json(tasks);
+        } else {
+          this.res.json({msg: 'you have an error please check name and body keys'});
+        }
       }
     });
   }
