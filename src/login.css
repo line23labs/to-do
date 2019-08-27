@@ -1,4 +1,4 @@
-$height:400px;
+/* $height:400px;
 body{width:100%;height:700px;margin:0;padding:0;}
 #space > div{width:500px;margin:auto;margin-top:10%;font-family: 'Roboto', sans-serif;}
 
@@ -15,4 +15,59 @@ body{width:100%;height:700px;margin:0;padding:0;}
 #password{width:125px;margin-left:6px !important;}
 
 
-#login > #email,#login > #password,#login >button{width:250px;margin-left:125px !important;margin-top:20px;height:25px;}
+#login > #email,#login > #password,#login >button{width:250px;margin-left:125px !important;margin-top:20px;height:25px;} */ */ */
+
+.form-group {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.input{
+  font-size: 15px;
+  padding-top: 7px;
+  overflow: hidden;
+
+}
+
+#signup {
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background: #0250c5;
+  background: -webkit-linear-gradient(bottom, #0250c5, #d43f8d);
+  background: -o-linear-gradient(bottom, #0250c5, #d43f8d);
+  background: -moz-linear-gradient(bottom, #0250c5, #d43f8d);
+  background: linear-gradient(bottom, #0250c5, #d43f8d);
+  position: relative;
+  z-index: 1;
+}
+
+.limiter {
+  width: 100%;
+  margin: 0 auto;
+}
+.SignUP{
+  font-family: Raleway-Black;
+  font-size: 30px;
+  color: #333333;
+  line-height: 1.2;
+  text-transform: uppercase;
+  text-align: center;
+
+  width: 100%;
+  display: block;
+}
