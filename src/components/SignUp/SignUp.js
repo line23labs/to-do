@@ -3,43 +3,80 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 export class SignUp extends React.Component {
   render() {
     return (
+      <div className = "limiter">
+      <div className = "container-login100">
+        <div className = 'wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30'>
+          <form role="form" method="post" className="container-signup100-form-btn">
+            <span class="login100-form-title p-b-55">
+              <strong>SignUp</strong>
+            </span>
 
-      <div class = 'limiter'>
-        <div id="signup">
-          <form role="form" method="post" className = 'form-group'>
-          <span class="login100-form-title p-b-55">
-						<strong>SignUp</strong>
-					</span>
-
-            <div>
-              <label> First Name:</label>
-              <input type="text" id="first" name="First Name"  className = 'input'required />
-            </div>
-
-            <div>
-              <label>Last Name:</label>
-              <input type="text" id="last" name="Last Name" className = 'input' required />
-            </div>
-            <div>
-              <label>Email:</label>
-              <input type="email" id="email" name="Email" className = 'input' required />
-            </div>
-            <div>
-              <label>Password:</label>
-              <input type="password" id="password" name="Password" className = 'input' required />
-            </div>
-            <div>
-              <label>Confirm Password:</label>
-              <input type="password" id="confirm" name="Confirm Password" className = 'input'required/>
-            </div>
-            <div>
-              <button id="send" type="submit" class = 'SignUp'> Signup </button>
+            <div className = 'wrap-input100'>
+              <input className = 'input'
+                type="text"
+                name="FirstName"
+                placeholder="First Name"
+                required
+              ></input>
+              <span className = "focus-input100"></span>
             </div>
 
-              <a href="Login">Create an account</a>
+            <div className = 'wrap-input100'>
+              <input className = 'input'
+                type="text"
+                name="lastName"
+                placeholder="Last Name"
+                required
+              ></input>
+              <span className = "focus-input100"></span>
+            </div>
 
+            <div className = 'wrap-input100'>
+              <input className = 'input'
+                type="text"
+                name="Email"
+                placeholder="email"
+                required = 'ex@abc.xyz'
+              ></input>
+              <span className = "focus-input100"></span>
+              <span className = "symbol-input100">
+                <span className = "lnr lnr-envelope"></span>
+              </span>
+            </div>
+            <div className = 'wrap-input100'>
+              <input className = 'input' type="text" name="pass" placeholder="Password"></input>
+              <span className = "focus-input100"></span>
+              <span className = "symbol-input100">
+                <span className = "lnr lnr-lock"></span>
+              </span>
+            </div>
+            <div className = 'wrap-input100'>
+              <input className = 'input'
+                type="text"
+                name="pass"
+                placeholder="Confirm Password"
+              ></input>
+              <span className = "focus-input100"></span>
+              <span className = "symbol-input100">
+                <span className = "lnr lnr-lock"></span>
+              </span>
+            </div>
+            <div className = "container-signup100-form-btn p-t-25">
+              <button id = 'signup'className = "SignUp">SignUp</button>
+            </div>
+            <div className = "text-center w-full p-t-42 p-b-22">
+              <span className = "txt1">Or SignUp with</span>
+            </div>
+            <div className = "text-center w-full p-t-115">
+              <span className = "txt1">Have an account already?</span>
+
+              <a className = "txt1 bo1 hov1" href="./Login">
+                Login
+              </a>
+            </div>
           </form>
         </div>
+      </div>
       </div>
     );
   }
