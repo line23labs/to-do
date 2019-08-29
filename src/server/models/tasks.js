@@ -13,17 +13,12 @@ const TaskSchema = new Schema({
     type: String,
     required: true,
   },
-  start_date: {
+  startDate: {
     type: Date,
     required: true,
     trim: true,
   },
-  end_date: {
-    type: Date,
-    required: true,
-    trim: true,
-  },
-  time: {
+  endDate: {
     type: Date,
     required: true,
     trim: true,

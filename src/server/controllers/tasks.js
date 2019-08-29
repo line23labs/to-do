@@ -37,7 +37,7 @@ export class TaskManager {
          * @param {*} [option={}]
          * @memberof TaskManager
          */
-  findById(option = {}) {
+  findTaskById(option = {}) {
     Task.findById(option, (error, tasks) => {
       if (error) {
         let response = error.message;
@@ -60,20 +60,19 @@ export class TaskManager {
      * @param {*} [option={}]
      * @memberof TaskManager
      */
-  updateATask() {
-    Task.findById(this.req.params.id).exec((error, tasks) => {
+  updateTask() {
+    Task.findById(this.req.params.id).exec((error, task) => {
       if (error) {
         this.res.json({
           error: error.message,
         });
       } else {
-        tasks.name = this.req.body.name || tasks.name;
-        tasks.body = this.req.body.body || tasks.body;
-        tasks.start_date = this.req.body.start_date || tasks.start_date;
-        tasks.end_date = this.req.body.end_date || tasks.end_date;
-        tasks.time = this.req.body.time || tasks.time;
-        tasks.save();
-        this.res.json(tasks);
+        task.name = this.req.body.name || task.name;
+        task.body = this.req.body.body || task.body;
+        task.startDate = this.req.body.startDate || tasks.startDate;
+        task.endDate = this.req.body.endDate || tasks.endDate;
+        task.save();
+        this.res.json(task);
       };
     });
   }
@@ -98,7 +97,7 @@ export class TaskManager {
          *
          * @memberof TaskManager
          */
-  insertATask() {
+  insertTask() {
     const newTask = new Task(this.req.body);
     newTask.save((error, tasks) => {
       if (error) {
