@@ -83,11 +83,11 @@ export class TaskManager {
     });
   }
   /**
-         *
-         *
-         * @param {*} [id={}]
-         * @memberof TaskManager
-         */
+   *
+   *
+   * @param {*} [id={}]
+   * @memberof TaskManager
+   */
   deleteTask(id) {
     Task.findByIdAndRemove(id, (error, tasks) => {
       if (!error) {
@@ -100,7 +100,14 @@ export class TaskManager {
   insertTask() {
     const newTask = new Task(this.req.body);
     newTask.save((error, tasks) => {
-      this.res.json(tasks);
+      if (error) {
+        const response = error.message;
+        this.res.json({
+          error: response,
+        });
+      } else {
+        this.res.json(tasks);
+      }
     });
   }
 }
