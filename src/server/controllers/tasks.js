@@ -31,14 +31,13 @@ export class TaskManager {
       }
     });
   }
-
   /**
-     *
-     *
-     * @param {*} [option={}]
-     * @memberof TaskManager
-     */
-  findTaskById(option = {}) {
+         *
+         *
+         * @param {*} [option={}]
+         * @memberof TaskManager
+         */
+  findById(option = {}) {
     Task.findById(option, (error, tasks) => {
       if (error) {
         let response = error.message;
@@ -54,12 +53,36 @@ export class TaskManager {
     });
   }
 
+
   /**
      *
      *
-     * @param {*} [id={}]
+     * @param {*} [option={}]
      * @memberof TaskManager
      */
+  updateATask() {
+    Task.findById(this.req.params.id).exec((error, tasks) => {
+      if (error) {
+        this.res.json({
+          error: error.message,
+        });
+      } else {
+        tasks.name = this.req.body.name || tasks.name;
+        tasks.body = this.req.body.body || tasks.body;
+        tasks.start_date = this.req.body.start_date || tasks.start_date;
+        tasks.end_date = this.req.body.end_date || tasks.end_date;
+        tasks.time = this.req.body.time || tasks.time;
+        tasks.save();
+        this.res.json(tasks);
+      };
+    });
+  }
+  /**
+         *
+         *
+         * @param {*} [id={}]
+         * @memberof TaskManager
+         */
   deleteTask(id) {
     Task.findByIdAndRemove(id, (error, tasks) => {
       if (!error) {
@@ -72,23 +95,22 @@ export class TaskManager {
   /**
          *
          *
+         *
          * @memberof TaskManager
          */
-  updateTask() {
-    Task.findById(this.req.params.id).exec((error, tasks) => {
+  insertATask() {
+    const newTask = new Task(this.req.body);
+    newTask.save((error, tasks) => {
       if (error) {
+        console.log('error');
+
+        const response = error.message;
         this.res.json({
-          error: error.message,
+          error: response,
         });
       } else {
-        if (this.req.body.name && this.req.body.body) {
-          tasks.name = this.req.body.name || tasks.name;
-          tasks.body = this.req.body.body || tasks.body;
-          tasks.save();
-          this.res.json(tasks);
-        } else {
-          this.res.json({msg: 'you have an error please check name and body keys'});
-        }
+        // this.res.redirect('http://localhost:3000/');
+        this.res.json(tasks);
       }
     });
   }
