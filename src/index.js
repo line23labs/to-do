@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 import { LoginPage } from "./components/LoginPage";
 import { SignUp } from "./components/SignUp";
 import { Login } from "./components/Login";
-import { CSS } from "./login.css";
+import { CSS } from "./style.css";
 /**
  * Main Application Component
  */

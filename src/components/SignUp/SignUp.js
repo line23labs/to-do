@@ -6,13 +6,13 @@ export class SignUp extends React.Component {
       <div className = "limiter">
       <div className = "container-login100">
         <div className = 'wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30'>
-          <form role="form" method="post" className="container-signup100-form-btn">
-            <span class="login100-form-title p-b-55">
+          <form role="form" method="post" className="signup100-form validate-form">
+            <span class="signup100-form-title p-b-55">
               <strong>SignUp</strong>
             </span>
 
             <div className = 'wrap-input100'>
-              <input className = 'input'
+              <input className = 'input100'
                 type="text"
                 name="FirstName"
                 placeholder="First Name"
@@ -22,7 +22,7 @@ export class SignUp extends React.Component {
             </div>
 
             <div className = 'wrap-input100'>
-              <input className = 'input'
+              <input className = 'input100'
                 type="text"
                 name="lastName"
                 placeholder="Last Name"
@@ -32,7 +32,7 @@ export class SignUp extends React.Component {
             </div>
 
             <div className = 'wrap-input100'>
-              <input className = 'input'
+              <input className = 'input100'
                 type="text"
                 name="Email"
                 placeholder="email"
@@ -44,14 +44,14 @@ export class SignUp extends React.Component {
               </span>
             </div>
             <div className = 'wrap-input100'>
-              <input className = 'input' type="text" name="pass" placeholder="Password"></input>
+              <input className = 'input100' type="text" name="pass" placeholder="Password"></input>
               <span className = "focus-input100"></span>
               <span className = "symbol-input100">
                 <span className = "lnr lnr-lock"></span>
               </span>
             </div>
             <div className = 'wrap-input100'>
-              <input className = 'input'
+              <input className = 'input100'
                 type="text"
                 name="pass"
                 placeholder="Confirm Password"
@@ -61,16 +61,16 @@ export class SignUp extends React.Component {
                 <span className = "lnr lnr-lock"></span>
               </span>
             </div>
-            <div className = "container-signup100-form-btn p-t-25">
-              <button id = 'signup'className = "SignUp">SignUp</button>
+            <div className = "container-login100-form-btn p-t-25">
+              <button className = "SignUp100-form-btn">SignUp</button>
             </div>
             <div className = "text-center w-full p-t-42 p-b-22">
               <span className = "txt1">Or SignUp with</span>
             </div>
             <div className = "text-center w-full p-t-115">
-              <span className = "txt1">Have an account already?</span>
+              <span className = "txt1 ">Have an account already?</span>
 
-              <a className = "txt1 bo1 hov1" href="./Login">
+              <a className = "txt1 bo1 hov1 text-center" href="./Login">
                 Login
               </a>
             </div>

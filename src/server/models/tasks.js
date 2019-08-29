@@ -38,6 +38,9 @@ const LoginSchema = new Schema({
   LastName: {
   Type: String,
   },
+  Email: {
+    Type: String,
+  },
   Password: {
   Type: String,
   },
@@ -45,6 +48,6 @@ const LoginSchema = new Schema({
   Type: String,
   }
   });
-  const login = mongoose.model('register', LoginSchema);
+  const login = mongoose.model('to-do users', LoginSchema);
 
-  export{login};
+  export {login};
