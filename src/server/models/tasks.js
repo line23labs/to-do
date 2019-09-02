@@ -5,11 +5,27 @@ const ObjectId = Schema.ObjectId;
 
 const TaskSchema = new Schema({
   id: ObjectId,
-  name: String,
-  body: String,
-  date: Date,
+  name: {
+    type: String,
+    required: true,
+  },
+  body: {
+    type: String,
+    required: true,
+  },
+  startDate: {
+    type: Date,
+    required: true,
+    trim: true,
+  },
+  endDate: {
+    type: Date,
+    required: true,
+    trim: true,
+  },
 });
 
 const Task = mongoose.model('tasks', TaskSchema);
+
 
 export {Task};
