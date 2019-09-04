@@ -1,5 +1,5 @@
 import {Task} from '../models/tasks';
-
+import { registerUser} from '../models/signUp';
 /**
  * Manage Tasks for our Express API
  */
@@ -112,5 +112,26 @@ export class TaskManager {
         this.res.json(tasks);
       }
     });
+  }
+  /**
+   *
+   *
+   * @memberof TaskManager
+   */
+  insertUser(){
+
+    const newUser = new registerUser(this.req.body);
+    // console.log(this.req.body)
+    newUser.save((error, todoUsers) => {
+      if (error) {
+        const response = error.message;
+        this.res.json({
+          error: response,
+        });
+      } else {
+      this.res.json(todoUsers);
+      }
+    })
+    console.log(newUser);
   }
 }

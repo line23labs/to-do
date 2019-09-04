@@ -94,9 +94,11 @@ iframe {
 
 .p-l-50 {padding-left: 50px;}
 .p-r-50 {padding-right: 50px;}
-.p-t-77 {padding-top: 77px;}
+.p-t-40 {padding-top: 40px;}
 .p-b-30 {padding-bottom: 30px;}
-.p-b-55 {padding-bottom: 55px;}
+.p-b-20 {padding-bottom: 20px;}
+.p-b-66 {padding-bottom: 66px;}
+.p-t-30 {padding-top: 70px;}
 
 .signup100-form-title {
   font-family: Raleway-Black;
@@ -111,9 +113,9 @@ iframe {
 }
 .wrap-input100 {
   position: relative;
-  width: 80%;
+  width: 100%;
   z-index: 1;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 
 .container-login100-form-btn {
@@ -133,7 +135,6 @@ iframe {
   border-radius: 3px;
   overflow: hidden;
   height: 700px;
-
 }
 
 

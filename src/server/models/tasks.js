@@ -30,24 +30,4 @@ const Task = mongoose.model('tasks', TaskSchema);
 
 export {Task};
 
-const LoginSchema = new Schema({
-  id: ObjectId,
-  Firstname: {
-  Type: String,
-  },
-  LastName: {
-  Type: String,
-  },
-  Email: {
-    Type: String,
-  },
-  Password: {
-  Type: String,
-  },
-  ConfirmPassword: {
-  Type: String,
-  }
-  });
-  const login = mongoose.model('to-do users', LoginSchema);
 
-  export {login};
