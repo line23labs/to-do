@@ -5,27 +5,19 @@ const ObjectId = Schema.ObjectId;
 
 const LoginSchema = new Schema({
   id: ObjectId,
-  Firstname: {
+  Firstname:String,
+
+  LastName: String,
+  Email:  String,
+  Username: String,
+  Password: String,
   Type: String,
-  },
-  LastName: {
-  Type: String,
-  },
-  Email: {
-    Type: String,
-  },
-  Username: {
-    Type: String,
-  },
-  Password: {
-  Type: String,
-  },
-  ConfirmPassword: {
-  Type: String,
-  }
-  },
-  { timestamps: true },
-  );
+
+  ConfirmPassword:  String,
+
+
+
+});
   const registerUser = mongoose.model('todoUsers', LoginSchema);
 
   export {registerUser};

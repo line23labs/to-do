@@ -18,7 +18,7 @@ class App extends React.Component {
     return (
       <div>
         {" "}
-        <Login></Login>
+        <SignUp></SignUp>
       </div>
     );
   }
