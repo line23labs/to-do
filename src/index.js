@@ -11,7 +11,10 @@ class App extends React.Component {
    * @return {void}
    */
   render() {
-    return <div><Login></Login></div>;
+    return (
+      <div>
+        <Login></Login>
+      </div>);
   }
 }
 ReactDOM.render(<App/>, document.getElementById('app'));
