@@ -11,21 +11,27 @@ export class SignUpForm extends Component {
 
     render() {
         return (
-            <div className='register-box-body'>
-                <p className='login-box-msg'>Register a new membership</p>
+            <div className='card'>
+                <div className='card-body register-card-body'>
+                    <p className='login-box-msg'>Register a new membership</p>
 
-                <form>
-                    <div className='form-group has-feedback'>
-                        <input
-                            type='text'
-                            className='form-control'
-                            placeholder='Full name'
-                            defaultValue={this.state.fullName}
-                            onChange={this.onChange.bind(this)}
-                        />
-                        <span className='glyphicon glyphicon-user form-control-feedback'></span>
-                    </div>
-                </form>
+                    <form>
+                        <div className='input-group mb-3'>
+                            <input
+                                type='text'
+                                className='form-control'
+                                placeholder='Full name'
+                                defaultValue={this.state.fullName}
+                                onChange={this.onChange.bind(this)}
+                            />
+                            <div className='input-group-append'>
+                                <div className='input-group-text'>
+                                    <span className='fa fa-user'></span>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         );
     }

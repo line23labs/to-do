@@ -5,7 +5,7 @@ import { LoginPage } from "./components/LoginPage";
 import { SignUpPage } from "./components/SignUpPage";
 import { Login } from "./components/Login";
 // import { CSS } from "./style.css";
-import 'admin-lte/dist/css/AdminLTE.css';
+import 'admin-lte/dist/css/adminlte.css';
 
 /**
  * Main Application Component
