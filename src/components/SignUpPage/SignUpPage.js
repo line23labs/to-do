@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import axios from "axios";
 import { RegisterLogo } from '../RegisterLogo';
+import { SignUpForm } from '../SignUpForm';
 
 export class SignUpPage extends React.Component {
   constructor(props) {
@@ -24,17 +25,7 @@ export class SignUpPage extends React.Component {
     return (
       <div className='register-box'>
         <RegisterLogo/>
-
-        <div className='register-box-body'>
-          <p className="login-box-msg">Register a new membership</p>
-
-          <form>
-            <div className="form-group has-feedback">
-              <input type="text" className="form-control" placeholder="Full name"/>
-              <span className="glyphicon glyphicon-user form-control-feedback"></span>
-            </div>
-          </form>
-        </div>
+        <SignUpForm/>
       </div>
     )
   }
