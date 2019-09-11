@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import axios from "axios";
+import { RegisterLogo } from '../RegisterLogo';
 
 export class SignUpPage extends React.Component {
   constructor(props) {
@@ -22,12 +23,10 @@ export class SignUpPage extends React.Component {
   render() {
     return (
       <div className='register-box'>
-        <div class="register-logo">
-          <a href="#"><b>To-Do</b></a>
-        </div>
+        <RegisterLogo/>
 
         <div className='register-box-body'>
-          <p class="login-box-msg">Register a new membership</p>
+          <p className="login-box-msg">Register a new membership</p>
 
           <form>
             <div className="form-group has-feedback">
