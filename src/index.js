@@ -4,7 +4,8 @@ import ReactDOM from "react-dom";
 import { LoginPage } from "./components/LoginPage";
 import { SignUpPage } from "./components/SignUpPage";
 import { Login } from "./components/Login";
-import { CSS } from "./style.css";
+// import { CSS } from "./style.css";
+import 'admin-lte/dist/css/AdminLTE.css';
 
 /**
  * Main Application Component
@@ -16,11 +17,7 @@ class App extends React.Component {
    */
 
   render() {
-    return (
-      <div>
-        <SignUpPage/>
-      </div>
-    );
+    return <SignUpPage/>;
   }
 }
 
