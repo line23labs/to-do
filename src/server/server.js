@@ -5,8 +5,7 @@ import * as dotenv from 'dotenv';
 import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import config from '../../webpack.config.js';
-import * as bodyParser from 'body-parser';
-
+import bodyParser from 'body-parser';
 
 dotenv.config();
 
@@ -28,5 +27,6 @@ app.get('/api/task/:id', (req, res) => new TaskManager(req, res).findTaskById())
 app.delete('/api/task/:id', (req, res) => new TaskManager(req, res).deleteTask(req.params.id));
 app.post('/api/task', (req, res) => new TaskManager(req, res).insertTask());
 app.put('/api/task/:id', (req, res) => new TaskManager(req, res).updateTask());
+app.post('/api/register/user', (req,res) => new TaskManager(req, res).insertUser());
 
 app.listen(port, () => console.log(`Server listening on http://127.0.0.1:${port}`));
