@@ -52,6 +52,12 @@ export class TaskManager {
       }
     });
   }
+  /**
+   *  insert tasks into database
+   *
+   * @param {*} options
+   * @memberof TaskManager
+   */
 
 
   /**
@@ -77,11 +83,11 @@ export class TaskManager {
     });
   }
   /**
-         *
-         *
-         * @param {*} [id={}]
-         * @memberof TaskManager
-         */
+   *
+   *
+   * @param {*} [id={}]
+   * @memberof TaskManager
+   */
   deleteTask(id) {
     Task.findByIdAndRemove(id, (error, tasks) => {
       if (!error) {
@@ -91,24 +97,15 @@ export class TaskManager {
       }
     });
   }
-  /**
-         *
-         *
-         *
-         * @memberof TaskManager
-         */
   insertTask() {
     const newTask = new Task(this.req.body);
     newTask.save((error, tasks) => {
       if (error) {
-        console.log('error');
-
         const response = error.message;
         this.res.json({
           error: response,
         });
       } else {
-        // this.res.redirect('http://localhost:3000/');
         this.res.json(tasks);
       }
     });

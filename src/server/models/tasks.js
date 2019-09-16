@@ -23,9 +23,13 @@ const TaskSchema = new Schema({
     required: true,
     trim: true,
   },
+  email: {
+    type: String,
+    required: true,
+    lowercase: true,
+  },
 });
 
 const Task = mongoose.model('tasks', TaskSchema);
-
 
 export {Task};
