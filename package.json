@@ -9,7 +9,13 @@
     "clean": "nwb clean-app",
     "test": "nwb test",
     "test:coverage": "nwb test --coverage",
-    "test:watch": "nwb test --server"
+    "test:watch": "nwb test --server",
+    "lint": "eslint src/**/"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run lint"
+    }
   },
   "dependencies": {
     "admin-lte": "^3.0.0-alpha",
@@ -42,6 +48,7 @@
     "grunt-express-server": "^0.5.4",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^3.0.5",
     "nodemon": "^1.19.1",
     "nwb": "0.23.x",
     "style-loader": "^0.23.1",
