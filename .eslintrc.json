@@ -17,6 +17,7 @@
         "sourceType": "module"
     },
     "rules": {
-        "max-len": [ "error", { "code": 1000 } ]
+        "max-len": [ "error", { "code": 120 } ],
+        "require-jsdoc": "off"
     }
 }
