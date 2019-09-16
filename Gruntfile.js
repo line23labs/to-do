@@ -49,8 +49,7 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['clean build', 'express:dev', 'watch']);
   grunt.registerTask(
       'clean build',
-      'Compiles all the assets and copies the files to the dist directory.',
-      [
+      'Compiles all the assets and copies the files to the dist directory.', [
         'checkDependencies',
         'clean:build',
         'webpack:server',

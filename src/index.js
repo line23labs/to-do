@@ -1,7 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Login} from './components/SignUp';
+
 import 'admin-lte/dist/css/AdminLTE.css';
+
+
+import TodoList from "./components/TodoList";
+import ReactDOM from "react-dom";
 
 /**
  * Main Application Component
@@ -14,7 +18,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Login></Login>
+        <TodoList/>
       </div>);
   }
 }

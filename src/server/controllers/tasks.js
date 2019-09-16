@@ -37,7 +37,7 @@ export class TaskManager {
          * @param {*} [option={}]
          * @memberof TaskManager
          */
-  findTaskById(option = {}) {
+  findById(option = {}) {
     Task.findById(option, (error, tasks) => {
       if (error) {
         let response = error.message;
@@ -52,14 +52,6 @@ export class TaskManager {
       }
     });
   }
-  /**
-   *  insert tasks into database
-   *
-   * @param {*} options
-   * @memberof TaskManager
-   */
-
-
   /**
      *
      *
