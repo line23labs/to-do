@@ -18,6 +18,6 @@ const LoginSchema = new Schema({
 
 
 });
-  const registerUser = mongoose.model('todoUsers', LoginSchema);
+  const registerUser = mongoose.model('todousers', LoginSchema);
 
   export {registerUser};

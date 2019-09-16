@@ -28,6 +28,7 @@ export class SignUpPage extends React.Component {
       <div className="register-box">
         <RegisterLogo text="SIGNUP" />
         <SignUpForm />
+        <Login/>
       </div>
     );
   }
