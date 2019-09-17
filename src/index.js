@@ -1,12 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-import 'admin-lte/dist/css/AdminLTE.css';
-
-
 import TodoList from "./components/TodoList";
-import ReactDOM from "react-dom";
-
+import 'admin-lte/dist/css/AdminLTE.css';
 /**
  * Main Application Component
  */
@@ -23,3 +18,5 @@ class App extends React.Component {
   }
 }
 ReactDOM.render(<App/>, document.getElementById('app'));
+
+
