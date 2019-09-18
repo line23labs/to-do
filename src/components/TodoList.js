@@ -4,8 +4,8 @@ export default class TodoList extends Component {
 
   render() {
     return (
-      <div>
-       <Button>Hello World</Button>
+      <div className="card">
+          Hello World
       </div>
     );
   }
