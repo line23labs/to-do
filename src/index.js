@@ -1,7 +1,7 @@
 import React from "react";
 import TodoList from "./components/TodoList";
 import ReactDOM from "react-dom";
-import "admin-lte/dist/css/adminLTE.css";
+import "admin-lte/dist/css/adminlte.css";
 /**
  * Main Application Component
  */
