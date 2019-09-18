@@ -1,0 +1,6 @@
+.box{
+  padding-top: 100px;
+}
+.box.box-primary{
+   border-top-color: chartreuse;
+}
