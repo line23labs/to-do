@@ -1,7 +1,9 @@
 import React from "react";
+import TodoHeader from "./components/TodoHeader";
 import TodoList from "./components/TodoList";
+import TodoButton from "./components/TodoButton";
 import ReactDOM from "react-dom";
-import "admin-lte/dist/css/AdminLTE.css";
+import "admin-lte/dist/css/AdminLTE.min.css";
 import './components/styles/style.css'
 /**
  * Main Application Component
@@ -13,8 +15,8 @@ class App extends React.Component {
      */
     render() {
         return (
-            <div>
-                <TodoList />
+            <div className="box box-primary">
+                <TodoHeader/><TodoList/><TodoButton/>
             </div>
         );
     }
